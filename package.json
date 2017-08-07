@@ -1,0 +1,24 @@
+{
+  "name": "photo-scan-summary",
+  "version": "1.0.0",
+  "description": "Web application that summarizes data in an image",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shraddhaz/Photo-Scan-Summary.git"
+  },
+  "keywords": [
+    "Photo",
+    "Scan",
+    "Summary"
+  ],
+  "author": "Shraddha Zingade",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Shraddhaz/Photo-Scan-Summary/issues"
+  },
+  "homepage": "https://github.com/Shraddhaz/Photo-Scan-Summary#readme"
+}
