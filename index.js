@@ -10,7 +10,7 @@ var app = express();
 
 
 var apiKey = encodeURIComponent('193D8DE7A9');
-var len = encodeURIComponent(2);
+var len = encodeURIComponent(3);
 var url = `http://api.smmry.com/&SM_API_KEY=${apiKey}&SM_LENGTH=${len}`;
 
 
@@ -44,7 +44,6 @@ app.post('/', upload.single('input_image'), function (req,res,next) {
 
     var fileName = req.file.path;
 
-
     visionClient.textDetection({source: {filename: fileName}})
         .then(function (responses) {
             const detections = responses[0].textAnnotations;
@@ -58,7 +57,14 @@ app.post('/', upload.single('input_image'), function (req,res,next) {
             request(options, function (err, response, body) {
                 if (err) {
                     res.end(error);
-                } else {
+                }
+                else if(JSON.parse(body).sm_api_message == "TEXT IS TOO SHORT"){
+                    res.end(text);
+                }
+                else if(JSON.parse(body).sm_api_message =="INSUFFICIENT VARIABLES"){
+                    res.end('Insufficient data. Please try again');
+                }
+                else {
                     var summry = JSON.parse(body).sm_api_content;
                     res.end(summry);
                 }
