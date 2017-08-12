@@ -7,7 +7,11 @@ var upload = multer({ dest: 'uploads/' });
 var vision = require('@google-cloud/vision');
 var request = require('request');
 var bodyParser = require('body-parser');
+var ejs = require('ejs');
+
+
 var app = express();
+
 
 
 var apiKey = encodeURIComponent('193D8DE7A9');
@@ -17,6 +21,7 @@ var url = `http://api.smmry.com/&SM_API_KEY=${apiKey}&SM_LENGTH=${len}`;
 
 var text;
 var options;
+var summry;
 
 
 var visionClient = vision({
@@ -26,7 +31,7 @@ var visionClient = vision({
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/summary', upload.single('input_image'), function (req,res,next) {
+app.post('/', upload.single('input_image'), function (req,res,next) {
     res.writeHead(200, {
         'Content-Type': 'text/html'
     });
@@ -54,9 +59,18 @@ app.post('/summary', upload.single('input_image'), function (req,res,next) {
                     res.end('Insufficient data. Please try again');
                 }
                 else {
-                    var summry = JSON.parse(body).sm_api_content;
-                    res.end(summry);
+                    summry = JSON.parse(body).sm_api_content;
+                    //res.end(summry);
                 }
+            });
+
+            fs.readFile('index.html', 'utf-8', function(err, content) {
+                if (err) {
+                    res.end('error occurred');
+                    return;
+                }
+                var renderedHtml = ejs.render(content, {temp: summry});  //get redered HTML code
+                res.end(renderedHtml);
             });
         });
 });

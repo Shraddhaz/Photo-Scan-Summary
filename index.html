@@ -5,12 +5,19 @@
     <title>Title</title>
 
 <body>
-        <form method="post" action="http://127.0.0.1:8080/summary" enctype="multipart/form-data" >
-            <input type = "file" name = "input_image" id="input_image"> </input>
-    <br><br>
-        <input type = "submit"> </input>
 
-        </form>
+<div class="container">
+    <form method="post" action="http://127.0.0.1:8080" enctype="multipart/form-data" >
+        <input type = "file" name = "input_image" id="input_image"> </input>
+         <br><br>
+            <input type = "submit"> </input>
+    </form>
+
+</div>
+
+Summary is: <%= temp %>
+
+
 
         <!--<div id="contact">-->
             <!--<h1>Send an email</h1>-->
