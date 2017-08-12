@@ -76,4 +76,4 @@ This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-* Prof. Simon Niklaus for helping me understand Node.js properly.
+* Prof. Simon Niklaus for helping me with Node.js and Express.
