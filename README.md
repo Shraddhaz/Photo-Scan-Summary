@@ -1,6 +1,6 @@
 # Photo-Scan-Summary
 
-One Paragraph of project description goes here
+Photo-Scan-Summary extracts the text within an image, with support for broad range of languages, along with language identification and then provide its summary in an efficient manner for ease of understanding, that is done mainly by reducing text to its most important sentences.
 
 ## Getting Started
 
@@ -54,34 +54,26 @@ Give an example
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+We can deploy this on a live system by hosting it on a cloud platform like AWS, Heroku or Google Cloud. Once that is done, we can easily access the webpage and use the application easily.
+
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+* [IntelliJ](https://www.jetbrains.com/idea/) - Platform used
+* [Node.js](https://nodejs.org/en/) - Platform used
+* [Express](https://expressjs.com/) - Platform used
+* [Google Cloud Vision API](https://cloud.google.com/vision/) - Text Extraction API
+* [SMMRY API](http://smmry.com/api) - Summary API
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Shraddha Zingade** - *Full Project* - https://github.com/Shraddhaz
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* Prof. Simon Niklaus for helping me understand Node.js properly.
