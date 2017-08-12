@@ -12,8 +12,6 @@ var ejs = require('ejs');
 
 var app = express();
 
-
-
 var apiKey = encodeURIComponent('193D8DE7A9');
 var len = encodeURIComponent(3);
 var url = `http://api.smmry.com/&SM_API_KEY=${apiKey}&SM_LENGTH=${len}`;
@@ -29,6 +27,13 @@ var visionClient = vision({
     keyFilename: 'key.json'
 });
 
+fs.readFile('index.html', 'utf-8', function(err, content) {
+    if (err) {
+        res.end('error occurred');
+        return;
+    }
+    var compiled = ejs.compile(content);
+
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/', upload.single('input_image'), function (req,res,next) {
@@ -36,7 +41,8 @@ app.post('/', upload.single('input_image'), function (req,res,next) {
         'Content-Type': 'text/html'
     });
 
-    var fileName = req.file.path;
+
+        var fileName = req.file.path;
 
     visionClient.textDetection({source: {filename: fileName}})
         .then(function (responses) {
@@ -53,24 +59,16 @@ app.post('/', upload.single('input_image'), function (req,res,next) {
                     res.end(error);
                 }
                 else if(JSON.parse(body).sm_api_message == "TEXT IS TOO SHORT"){
-                    res.end(text);
+                    res.end(compiled({summ:text}));
                 }
                 else if(JSON.parse(body).sm_api_message =="INSUFFICIENT VARIABLES"){
-                    res.end('Insufficient data. Please try again');
+                    res.end(compiled({summ:'Insufficient data. Please try again'}));
                 }
                 else {
                     summry = JSON.parse(body).sm_api_content;
-                    //res.end(summry);
+                    res.end(compiled({summ: summry}));
                 }
             });
-
-            fs.readFile('index.html', 'utf-8', function(err, content) {
-                if (err) {
-                    res.end('error occurred');
-                    return;
-                }
-                var renderedHtml = ejs.render(content, {temp: summry});  //get redered HTML code
-                res.end(renderedHtml);
             });
         });
 });
