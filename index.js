@@ -6,6 +6,7 @@ var multer = require('multer');
 var upload = multer({ dest: 'uploads/' });
 var vision = require('@google-cloud/vision');
 var request = require('request');
+var bodyParser = require('body-parser');
 var app = express();
 
 
@@ -23,24 +24,12 @@ var visionClient = vision({
     keyFilename: 'key.json'
 });
 
-var str = '<!DOCTYPE html><html><body>' +
-    '<p><form method="post" action="/" enctype="multipart/form-data">' +
-    '<p><input type = "file" name = "input_image"></input>' +
-    '<p><input type = "submit"></input>' +
-    '</form></body></html>';
+app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/', function (req,res) {
+app.post('/summary', upload.single('input_image'), function (req,res,next) {
     res.writeHead(200, {
         'Content-Type': 'text/html'
     });
-    res.end(str);
-});
-
-app.post('/', upload.single('input_image'), function (req,res,next) {
-    res.writeHead(200, {
-        'Content-Type': 'text/html'
-    });
-
 
     var fileName = req.file.path;
 
@@ -73,4 +62,6 @@ app.post('/', upload.single('input_image'), function (req,res,next) {
 });
 
 
-app.listen(8080);
+app.listen(8080, function () {
+    console.log('Server running at http://127.0.0.1:8080/');
+});
