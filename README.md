@@ -62,7 +62,7 @@ If there are any questions regarding the project, you can contact the author at 
 
 ## Legal
 
-This project is licensed under Copyright (c) MIT License. Go to [LICENSE](https://github.com/Shraddhaz/Photo-Scan-Summary/blob/master/LICENSE) for more details.
+This project is licensed under Copyright ©  MIT License. Go to [LICENSE](https://github.com/Shraddhaz/Photo-Scan-Summary/blob/master/LICENSE) for more details.
 
 Other than that, the front-end has parts of templates from [https://bootstrapmade.com](https://bootstrapmade.com)
 
