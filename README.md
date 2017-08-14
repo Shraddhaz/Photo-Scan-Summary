@@ -1,6 +1,6 @@
 # Photo-Scan-Summary
 
-Photo-Scan-Summary extracts the text within an image, with support for broad range of languages, along with language identification and then provide its summary in an efficient manner for ease of understanding, that is done mainly by reducing text to its most important sentences.
+Photo-Scan-Summary extracts the text within an image, and provides its summary in an efficient manner for ease of understanding, that is mainly done by reducing text to its most important sentences. It also supports a broad range of languages, along with language identification.
 
 ## Prerequisites
 
