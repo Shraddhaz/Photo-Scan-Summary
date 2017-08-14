@@ -3,21 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <body>
-
 
 <div class="container">
     <form method="post" action="http://127.0.0.1:8080" enctype="multipart/form-data" >
         <input type = "file" name = "input_image" id="input_image"> </input>
         <br><br>
-        <input type = "submit"> </input>
+        <input type = "submit" id="submit"> </input>
     </form>
 
 </div>
 
-Summary is: <%= summ %>
-
+<div>
+    {{#summ}}
+        {{summry}}
+    {{/summ}}
+</div>
 </body>
 
 
