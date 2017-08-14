@@ -2,78 +2,72 @@
 
 Photo-Scan-Summary extracts the text within an image, with support for broad range of languages, along with language identification and then provide its summary in an efficient manner for ease of understanding, that is done mainly by reducing text to its most important sentences.
 
-## Getting Started
+## Prerequisites
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The web application's front-end is HTML/CSS/jQuery while the back-end is Node.js/Express. To use the application on your PC, you can clone this git repository, start the server in index.js file and then give the input from index.html.
 
-### Prerequisites
+## Source Code
+You can find the source code at [https://github.com/Shraddhaz/Photo-Scan-Summary](https://github.com/Shraddhaz/Photo-Scan-Summary)
 
-What things you need to install the software and how to install them
+## Installation
 
+Firstly, clone the git repository. 
 ```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
+git clone https://github.com/Shraddhaz/Photo-Scan-Summary
 ```
 
-And repeat
+And then get all the packages required for the application by using the command:
 
 ```
-until finished
+npm install
 ```
+The application is built using two APIs: Google's Cloud Vision API and SMMRY API. For this, you need to sign up and get their keys. For guidelines on how to get the key, you can refer to [Get key.json for Google Vision API](https://cloud.google.com/vision/docs/auth) and [Get key for SMMRY](http://smmry.com/api)
 
-End with an example of getting some data out of the system or using it for a little demo
+Now, save the "key.json" achieved from Vision API in the same folder as index.js and write the SMMRY API's key in index.js file.
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+## Execution
+Start the server using,
 ```
-Give an example
+node index.js
 ```
+Now open the index.html file on your web browser and follow the guidelines given at the bottom of the page to get started with the basic steps being: 
+1. Select Image
+2. Upload Image
+3. Press Submit
+4. Get the summary
 
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-We can deploy this on a live system by hosting it on a cloud platform like AWS, Heroku or Google Cloud. Once that is done, we can easily access the webpage and use the application easily.
-
-
-## Built With
+## Technical Details
 
 * [IntelliJ](https://www.jetbrains.com/idea/) - Platform used
-* [Node.js](https://nodejs.org/en/) - Platform used
-* [Express](https://expressjs.com/) - Platform used
+* [Node.js](https://nodejs.org/en/) - Back-End 
+* [Express](https://expressjs.com/) - Back-End 
+* [HTML/CSS/Bootstrap/JQuery](https://developer.mozilla.org/en-US/docs/Web) - Front-End
 * [Google Cloud Vision API](https://cloud.google.com/vision/) - Text Extraction API
 * [SMMRY API](http://smmry.com/api) - Summary API
 
+## Future Scope
+
+Deploying this web application on a live system by hosting it on a cloud platform like AWS, Heroku or Google Cloud. This makes the web application more accessible and easy to use.
+
+## Presentation
+For more details you can refer to the powerpoint presentation slides from: 
+
 ## Authors
 
-* **Shraddha Zingade** - *Full Project* - https://github.com/Shraddhaz
+* **Shraddha Zingade** - *Photo-Scan-Summary* - https://github.com/Shraddhaz
 
+## Contact and Bug Tracker
 
-## License
+If there are any questions regarding the project, you can contact the author at [shraddha@pdx.edu](shraddha@pdx.edu) or post your queries on [https://github.com/Shraddhaz/Photo-Scan-Summary/issues](https://github.com/Shraddhaz/Photo-Scan-Summary/issues)
 
-This project is licensed under the MIT License.
+## Legal
+
+This project is licensed under Copyright (c) MIT License. Go to [LICENSE](https://github.com/Shraddhaz/Photo-Scan-Summary/blob/master/LICENSE) for more details.
+
+Other than that, the front-end has parts of templates from [https://bootstrapmade.com](https://bootstrapmade.com)
 
 ## Acknowledgments
 
-* Prof. Simon Niklaus for helping me with Node.js and Express.
+*  **Prof. Simon Niklaus** for helping me with Node and Express.
+
+
