@@ -68,6 +68,6 @@ Other than that, the front-end has parts of templates from [https://bootstrapmad
 
 ## Acknowledgments
 
-*  **Prof. Simon Niklaus** for helping me with Node and Express.
+**Prof. Simon Niklaus** for helping me with Node and Express.
 
 
