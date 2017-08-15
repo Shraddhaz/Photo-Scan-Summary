@@ -113,7 +113,7 @@
                     <div class="form-group">
                       <input type="file" name="input_image" id="input_image" >
                     </div>
-                    <button type="submit" class="btn btn-primary" id="upload-submit"><a href="javascript:void(0)" onclick="setTimeout(upload, 4000);" style="color: #ffffff;text-decoration:none;">Submit</a></button>
+                    <button type="submit" class="btn btn-primary" id="upload-submit"><a href="javascript:void(0)" style="color: #ffffff;text-decoration:none;">Submit</a></button>
                   </div>
                 </form>
 
@@ -122,10 +122,9 @@
                 <h4>Summary</h4>
                 <div id="div" style="height: 200px">
 
-
-                  <!--{{#summ}}-->
-                    <!--{{summry}}-->
-                  <!--{{/summ}}-->
+                  {{#summ}}
+                    {{summry}}
+                  {{/summ}}
 
 
                 </div>
@@ -182,13 +181,6 @@
       </div>
     </footer>
   </div>
-    <script>
-        function upload() {
-            var delay = 1000;
-            setTimeout( upload, delay )
-            document.getElementById("div").textContent = "In King's Landing, Jaime tells Cersei of the crucial need for allies. In King's Landing, Euron returns with Ellaria and Tyene as a gift for Cersei, who promises to marry him after the war She then gives him co-control of her military along with Jaime. Against Tyrion's advice, Daenerys burns Randyll and Dickon alive for remaining allegiant to Cersei, forcing the other captives to pledge fealty to the former. Jon decides to travel beyond the Wall and capture a wight in order to convince Cersei for a temporary alliance. Davos smuggles Tyrion inside King's Landing, where he secretly meets with Jaime and offers an armistice, which Cersei accepts, informing Jaime that she is pregnant.";
-        }
-    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/wow.js"></script>
