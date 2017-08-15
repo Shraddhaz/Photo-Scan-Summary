@@ -11,7 +11,7 @@ var mustache = require('mustache');
 
 var app = express();
 
-var apiKey = encodeURIComponent('**********');
+var apiKey = encodeURIComponent('193D8DE7A9');
 var len = encodeURIComponent(3);
 var url = `http://api.smmry.com/&SM_API_KEY=${apiKey}&SM_LENGTH=${len}`;
 
@@ -19,7 +19,6 @@ var url = `http://api.smmry.com/&SM_API_KEY=${apiKey}&SM_LENGTH=${len}`;
 var text;
 var options;
 var summry;
-
 
 
 var visionClient = vision({

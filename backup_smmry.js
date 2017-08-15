@@ -1,0 +1,27 @@
+//
+// var in_a = require("in-a-nutshell");
+// YOUR_TEXT = "At the Twins, Arya fatally poisons the remaining lords of House Frey. The White Walkers march toward the Wall, where Tollett allows Bran and Meera inside. At Winterfell, despite Sansa's disapproval, Jon secures the loyalties of Houses Umber and Karstark, who fought alongside Ramsay in the Battle of the Bastards. At the Citadel, Samwell steals books that reveal a large reservoir of dragonglass in Dragonstone, and sends word to Jon. He later finds Jorah in a cell. In the Riverlands, Arya meets a group of friendly Lannister soldiers, who take her intention to kill Cersei as a joke. Thoros shows Sandor a vision in the fire. The revelation leads him to believe in the Lord of Light. In King's Landing, Jaime tells Cersei of the crucial need for allies. She welcomes Euron, who proposes marriage to her in exchange for his Iron Fleet and a chance to kill Theon and Yara. Cersei declines citing trust as a concern, so Euron promises to return with a 'gift' to prove his loyalty. Daenerys arrives at Dragonstone, the home of House Targaryen once occupied by Stannis, with her army and dragons. Daenerys sends the Dornishmen on Yara's fleet to Sunspear, the Unsullied to Casterly Rock and decides to not move on to King's Landing yet, intending to install a complete siege instead. She demands that Varys criticize her future mistakes instead of betraying her, which he did to previous monarchs. Melisandre arrives and encourages her to invite Jon Snow to Dragonstone. Grey Worm and Missandei consummate their relationship. Cersei gathers several lords, asking for their fealties and promising Randyll the title of Warden of the South. Qyburn shows Cersei an invented ballista for killing dragons. Arya meets with Hot Pie, who tells her of Jon's ascension to King in the North; she then decides to return to Winterfell. After receiving Samwell's letter, Jon leaves for Dragonstone in hopes of getting Daenerys's support against the White Walkers, leaving Sansa in charge and warning Littlefinger not to get close to her. Samwell begins a forbidden treatment for Jorah. Euron's fleet attacks Yara's. Obara and Nymeria are killed, while Ellaria, Tyene, and Yara are captured. Theon flees the carnage in horror by jumping into the sea. Jon arrives at Dragonstone, where Daenerys demands his fealty. Instead, he asks for help against the Army of the Dead; after advice from Tyrion, Daenerys grants them access to the dragonglass on the island. Melisandre leaves for Volantis. Bran arrives at Winterfell and explains some of his powers to Sansa. In King's Landing, Euron returns with Ellaria and Tyene as a gift for Cersei, who promises to marry him after the war. She then gives him co-control of her military along with Jaime. Cersei gives Tyene the same poison Ellaria used to kill Myrcella, forcing Ellaria to watch her daughter's oncoming death. In Oldtown, a healed Jorah leaves to find Daenerys. Ebrose decides to forgive Samwell. Grey Worm and the Unsullied attack Casterly Rock. However, it is revealed that Jaime took most of the Lannister forces to attack Highgarden, while Euron's fleet arrives destroying the Unsullied's ships. Jaime and the rest of the Lannister forces easily invade Highgarden. He gives Olenna poison as a quick and painless death. After drinking, she confesses to Joffrey's poisoning and demands he tell Cersei. Arya returns to Winterfell where she is reunited with Sansa and spars with Brienne, both of whom are unnerved by her exceptional fighting skills. Bran unemotionally bids farewell to Meera, divulging that he is no longer the boy she accompanied north. Littlefinger presents Bran with the dagger that was nearly used to assassinate him. Cersei promises the Iron Bank a full return on their investment, as a loot train from Highgarden is soon to arrive. Jon brings Daenerys to the dragonglass mine where he shows her ancient cave paintings depicting that the First Men and the Children of the Forest joined forces against the undead. Later, Daenerys learns that the Casterly Rock attack was a Lannister decoy, with Highgarden falling to the Lannisters. Despite Tyrion's protests, she decides to take action. Led by Daenerys riding Drogon and the Dothraki cavalry, Jaime and Bronn are caught by surprise while supervising the gold shipment, and the Dothrakis and Drogon's fire decimate the Lannister army. Drogon is wounded by a bolt from Bronn manning the scorpion weapon, and Jaime tries to attack Daenerys. Drogon launches his fire breath at Jaime, but Bronn tackles him into a river, where both are weighted down by their armor."
+//
+// var summary = in_a.nutshell(YOUR_TEXT, 15,'plaintext');
+// console.log(summary);
+//
+
+
+var express = require('express');
+var bodyParser = require('body-parser');
+var app     = express();
+
+//Note that in version 4 of express, express.bodyParser() was
+//deprecated in favor of a separate 'body-parser' module.
+app.use(bodyParser.urlencoded({ extended: true }));
+
+//app.use(express.bodyParser());
+
+app.post('/myaction', function(req, res) {
+    console.log(req.body.name);
+    res.send('You sent the name "' + req.body.name + '".');
+});
+
+app.listen(8080, function() {
+    console.log('Server running at http://127.0.0.1:8080/');
+});
