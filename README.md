@@ -49,8 +49,8 @@ Now open the index.html file on your web browser and follow the guidelines given
 
 Deploying this web application on a live system by hosting it on a cloud platform like AWS, Heroku or Google Cloud. This makes the web application more accessible and easy to use.
 
-## Presentation
-For more details you can refer to the powerpoint presentation slides from: https://goo.gl/MZDemx
+## Presentation and Demo
+For more details you can refer to the powerpoint presentation slides from: https://goo.gl/MZDemx and demo at https://goo.gl/LbXymk
 
 ## Authors
 
