@@ -1,3 +1,10 @@
+/**************************************************************** 
+  * Copyright (c) 2017 Shraddha Zingade                         *
+  * This program is licensed under the "MIT License".           *
+  * Please see the file LICENSE for license terms.              *
+/****************************************************************/
+ 
+    
 'use strict';
 
 var express = require('express');
