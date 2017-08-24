@@ -18,7 +18,7 @@ var mustache = require('mustache');
 
 var app = express();
 
-var apiKey = encodeURIComponent('193D8DE7A9');
+var apiKey = encodeURIComponent('**********');
 var len = encodeURIComponent(3);
 var url = `http://api.smmry.com/&SM_API_KEY=${apiKey}&SM_LENGTH=${len}`;
 
