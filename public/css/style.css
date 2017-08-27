@@ -274,14 +274,8 @@ features
 }
 
 #summary {
-    background: #c4e3f3;
-    width: 100%;
-    border-width: 1px;
-    margin-bottom: 30px;
-    color: #071f33;
     border-style: solid;
     border-color: #2e6da4;
-    line-height: 100px;
     height: 420px;
     border-radius: 2px;
 }
