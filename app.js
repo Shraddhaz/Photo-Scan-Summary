@@ -1,10 +1,3 @@
-/**************************************************************** 
-  * Copyright (c) 2017 Shraddha Zingade                         *
-  * This program is licensed under the "MIT License".           *
-  * Please see the file LICENSE for license terms.              *
-/****************************************************************/
- 
-    
 'use strict';
 
 var express = require('express');
@@ -15,17 +8,13 @@ var vision = require('@google-cloud/vision');
 var request = require('request');
 var bodyParser = require('body-parser');
 var mustache = require('mustache');
+var path    = require('path');
+var engines = require('consolidate');
+
 
 var app = express();
-
-var apiKey = encodeURIComponent('**********');
-var len = encodeURIComponent(3);
-var url = `http://api.smmry.com/&SM_API_KEY=${apiKey}&SM_LENGTH=${len}`;
-
-
-var text;
-var options;
-var summry;
+var apiKey = encodeURIComponent('193D8DE7A9');
+var len, url, text, options, summry;
 
 
 var visionClient = vision({
@@ -33,9 +22,26 @@ var visionClient = vision({
     keyFilename: 'key.json'
 });
 
-fs.readFile('index.html', 'utf-8', function(err, data) {
-    if (err) {
-        res.end('error occurred');
+
+app.set('views', __dirname + '/views');
+app.engine('html', engines.mustache);
+app.set('view engine', 'html');
+//Reference: https://www.npmjs.com/package/consolidate
+//Reference: https://stackoverflow.com/questions/16111386
+
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.get('/', function (req, res) {
+    res.render('index', { summ: ''});
+});
+
+
+fs.readFile('views/index.html', 'utf-8', function(error, data) {
+
+    if (error) {
+        res.end('Error');
         return;
     }
 
@@ -48,7 +54,11 @@ fs.readFile('index.html', 'utf-8', function(err, data) {
 
 
         var fileName = req.file.path;
+        len = encodeURIComponent(req.body.lines);
+        url = `http://api.smmry.com/&SM_API_KEY=${apiKey}&SM_LENGTH=${len}`;
 
+
+        //Reference: https://cloud.google.com/vision/docs/detecting-text#vision-text-detection-nodejs
         visionClient.textDetection({source: {filename: fileName}})
             .then(function (responses) {
                 const detections = responses[0].textAnnotations;
@@ -63,24 +73,20 @@ fs.readFile('index.html', 'utf-8', function(err, data) {
                     if (err) {
                         res.send(error);
                     }
-                    else if(JSON.parse(body).sm_api_message == "TEXT IS TOO SHORT"){
+                    else if(JSON.parse(body).sm_api_message === "TEXT IS TOO SHORT"){
                         res.write(mustache.render(data.toString(), {
-                            'summ': [
-                                { 'summry': text}]}));
+                            'summ':text
+                        }));
                     }
-                    else if(JSON.parse(body).sm_api_message == "INSUFFICIENT VARIABLES"){
+                    else if(JSON.parse(body).sm_api_error === "0" || JSON.parse(body).sm_api_error === "1" || JSON.parse(body).sm_api_error === "2" || JSON.parse(body).sm_api_error === "3"){
                         res.write(mustache.render(data.toString(), {
-                            'summ': [
-                                { 'summry': 'Insufficient data. Please try again'}
-                            ]
+                            summ: 'Error occurred. Please try again.'
                         }));
                     }
                     else {
                         summry = JSON.parse(body).sm_api_content;
                         res.write(mustache.render(data.toString(), {
-                            'summ': [
-                                { 'summry': summry }
-                            ]
+                            summ: summry
                         }));
                     }
                 });
@@ -88,6 +94,7 @@ fs.readFile('index.html', 'utf-8', function(err, data) {
     });
 });
 
-app.listen(8081, function () {
-    console.log('Server running at http://127.0.0.1:8081/');
+
+app.listen(8080, function () {
+    console.log('Server running at http://127.0.0.1:8080/');
 });

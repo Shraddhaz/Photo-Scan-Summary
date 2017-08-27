@@ -1,22 +1,28 @@
 {
   "name": "jsserver",
   "version": "1.0.0",
-  "description": "Thanks for downloading this theme!",
-  "main": "index.js",
+  "description": "PhotoScanSummary!",
+  "main": "app.js",
   "dependencies": {
     "@google-cloud/vision": "^0.12.0",
     "body-parser": "^1.17.2",
-    "ejs": "^2.5.7",
+    "consolidate": "^0.14.5",
     "express": "^4.15.4",
     "fs": "0.0.1-security",
     "multer": "^1.3.0",
     "mustache": "^2.3.0",
+    "path": "^0.12.7",
+    "pug": "^2.0.0-rc.3",
     "request": "^2.81.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "SZ",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Shraddhaz/Photo-Scan-Summary"
+  },
+  "author": "Shraddha Zingade",
   "license": "MIT"
 }

@@ -4,7 +4,7 @@ Photo-Scan-Summary extracts the text within an image, and provides its summary i
 
 ## Prerequisites
 
-The web application's front-end is HTML/CSS/jQuery while the back-end is Node.js/Express. To use the application on your PC, you can clone this git repository, start the server in index.js file and then give the input from index.html.
+The web application's front-end is HTML/CSS/jQuery while the back-end is Node.js/Express. To use the application on your PC, you can clone this git repository, start the server in app.js file and then give the input from index.html.
 
 ## Source Code
 You can find the source code at [https://github.com/Shraddhaz/Photo-Scan-Summary](https://github.com/Shraddhaz/Photo-Scan-Summary)
@@ -23,12 +23,12 @@ npm install
 ```
 The application is built using two APIs: Google's Cloud Vision API and SMMRY API. For this, you need to sign up and get their keys. For guidelines on how to get the key, you can refer to [Get key.json for Google Vision API](https://cloud.google.com/vision/docs/auth) and [Get key for SMMRY](http://smmry.com/api)
 
-Now, save the "key.json" achieved from Vision API in the same folder as index.js and write the SMMRY API's key in index.js file.
+Now, save the "key.json" achieved from Vision API in the same folder as app.js and write the SMMRY API's key in app.js file.
 
 ## Execution
 Start the server using,
 ```
-node index.js
+node app.js
 ```
 Now open the index.html file on your web browser and follow the guidelines given at the bottom of the page to get started with the basic steps being: 
 1. Select Image
@@ -49,8 +49,8 @@ Now open the index.html file on your web browser and follow the guidelines given
 
 Deploying this web application on a live system by hosting it on a cloud platform like AWS, Heroku or Google Cloud. This makes the web application more accessible and easy to use.
 
-## Presentation and Demo
-For more details you can refer to the powerpoint presentation slides from: https://github.com/Shraddhaz/Photo-Scan-Summary/blob/master/Photo-Scan-Summary.pdf and demo at https://goo.gl/CgCRFo
+## Presentation
+For more details you can refer to the powerpoint presentation slides from: 
 
 ## Authors
 
