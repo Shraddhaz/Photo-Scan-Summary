@@ -53,16 +53,16 @@ fs.readFile('views/index.html', 'utf-8', function(error, data) {
         });
 
 
-        var fileName = req.file.path;
+        var file_name = req.file.path;
         len = encodeURIComponent(req.body.lines);
         url = `http://api.smmry.com/&SM_API_KEY=${apiKey}&SM_LENGTH=${len}`;
 
 
         //Reference: https://cloud.google.com/vision/docs/detecting-text#vision-text-detection-nodejs
-        visionClient.textDetection({source: {filename: fileName}})
+        visionClient.textDetection({source: {filename: file_name}})
             .then(function (responses) {
-                const detections = responses[0].textAnnotations;
-                text = detections[0].description;
+                const detect_data = responses[0].textAnnotations;
+                text = detect_data[0].description;
                 options = {
                     url: url,
                     method: 'POST',
