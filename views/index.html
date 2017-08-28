@@ -6,11 +6,10 @@
     <title>Photo-Scan-Summary</title>
     <meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
     <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
-    
+
+    <!--CSS files in the public folder  -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-
-
 
       <!-- =======================================================
           Theme Name: Baker
@@ -21,6 +20,7 @@
   </head>
 <body>
 
+<!--Navigation Bar on top-->
 <div class="loader"></div>
 <div id="myDiv">
     <div class="header">
@@ -39,6 +39,8 @@
                         <div class="collapse navbar-collapse" id="myNavbar">
                             <ul class="nav navbar-nav navbar-right">
                                 <li class="active" id = "home" ><a href="#main-header">Home</a></li>
+
+                                <!--Giving Hyperlinks on the same page-->
                                 <li class=""><a href="#feature">Features</a></li>
                                 <li class=""><a href="#try">Try It</a></li>
                                 <li class=""><a href="#guideline">Guideline</a></li>
@@ -51,6 +53,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="banner-info text-center wow fadeIn delay-05s">
+
+                            <!--Main Page with Introduction-->
                             <h1 class="bnr-sub-title">PHOTO<span class="logo-dec">SCAN</span>SUMMARY</h1>
                             <p class="bnr-para">Got a lot of images you want to read from? <h3> Try Photo<span class = "logo-dec">Scan</span>Summary</h3> Photo<span class = "logo-dec">Scan</span>Summary extract the text from an image with language detection and <br> provides its summary in an efficient manner for ease of understanding, <br> that is done mainly by reducing the given text input to the utmost important sentences.<br></p>
                             <div class="brn-btn">
@@ -67,6 +71,7 @@
     </div>
 
 
+    <!--Three Features-->
     <section id="feature" class="section-padding wow fadeIn delay-05s feature">
         <div class="container">
             <h2 class="service-title">Features</h2>
@@ -103,7 +108,7 @@
         </div>
     </section>
 
-
+    <!--Try It Section-->
     <section id="try" class="section-padding wow fadeInUp delay-05s">
         <div class="container">
             <div class="row">
@@ -117,6 +122,7 @@
                 <div class="well">
                     <div class="panel-body">
 
+                        <!--Form for image uploading and submission-->
                         <h4>Select image to summarize</h4>
                         <form method="post" enctype="multipart/form-data" id="js-upload-form" action="http://127.0.0.1:8080">
                             <div class="form-inline">
@@ -137,6 +143,7 @@
 
                     </div>
 
+                    <!--Summary DIV-->
                     <h4>&nbsp; Summary</h4>
                     <div id="summary" name="summary">
                             {{summ}}
@@ -147,6 +154,7 @@
     </section>
 
 
+    <!--Guidelines for User-->
     <section id="guideline" class="section-padding wow fadeInUp delay-05s guideline">
         <div class="container">
             <div class="row">
@@ -181,6 +189,8 @@
             </div>
         </div>
     </section>
+
+    <!--Footer with License-->
     <!---->
     <!---->
     <footer id="footer">
@@ -200,6 +210,8 @@
       </div>
     </footer>
     <!---->
+
+    <!--JS Files in the public folder-->
   </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery.easing.min.js"></script>
