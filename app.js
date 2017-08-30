@@ -19,11 +19,10 @@ var apiKey = encodeURIComponent('193D8DE7A9');
 var len, url, text, options, summry;
 
 
-
 /**
  * Defining the variable to connect to the Google Vision API
  * The projectID is the name of the project given on my Google Platform Console
- * keyFileName is the key.json  generated for my Google Vision API
+ * keyFileName is the key.json  generated for my Google Vision API project
  * */
 var visionClient = vision({
     projectId: 'swift-adviser-176104',
@@ -32,8 +31,7 @@ var visionClient = vision({
 
 //Reference: https://www.npmjs.com/package/consolidate
 //Reference: https://stackoverflow.com/questions/16111386
-
-//Setting the string views to go to directory '/views'
+//Setting the string 'views' to go to directory '/views'
 app.set('views', __dirname + '/views');
 
 
@@ -49,7 +47,7 @@ app.set('view engine', 'html');
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-//Get method for rendering the 'index.html' file with 'summ' as empty
+//Get method for rendering the 'index.html' file with 'summ' being rendered empty
 app.get('/', function (req, res) {
     res.render('index', { summ: ''});
 });
@@ -79,6 +77,7 @@ fs.readFile('views/index.html', 'utf-8', function(error, data) {
         len = encodeURIComponent(req.body.lines);
 
         //Creating url for SMMRY API with user input and API key
+        //"url" variable needs JavaScript Language version as ECMAScript 6.
         url = `http://api.smmry.com/&SM_API_KEY=${apiKey}&SM_LENGTH=${len}`;
 
 
